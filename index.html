@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gerador de Senhas Seguras</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="icon" href="assets/icons/favicon.ico" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self';" />
+</head>
+<body>
+  <main class="password-generator">
+    <h1 class="password-generator__title">Gerador de Senhas Seguras</h1>
+
+    <form class="password-generator__form" id="passwordForm" aria-label="Formulário de geração de senhas">
+      <label for="length" class="password-generator__label">Comprimento: <span id="lengthValue">16</span></label>
+      <input type="range" id="length" name="length" min="8" max="128" value="16" class="password-generator__slider" />
+
+      <fieldset class="password-generator__options" aria-label="Opções de caracteres">
+        <legend>Tipos de caracteres</legend>
+        <label><input type="checkbox" id="includeUppercase" checked /> Maiúsculas (A-Z)</label>
+        <label><input type="checkbox" id="includeLowercase" checked /> Minúsculas (a-z)</label>
+        <label><input type="checkbox" id="includeNumbers" checked /> Números (0-9)</label>
+        <label><input type="checkbox" id="includeSymbols" checked /> Símbolos (!@#$%...)</label>
+        <label><input type="checkbox" id="excludeSimilar" /> Excluir caracteres similares</label>
+      </fieldset>
+
+      <label for="quantity" class="password-generator__label">Quantidade:</label>
+      <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" class="password-generator__number" />
+
+      <button type="submit" class="password-generator__button">Gerar Senha</button>
+    </form>
+
+    <section class="password-generator__results" aria-live="polite" aria-atomic="true">
+      <h2>Senha gerada:</h2>
+      <div class="password-generator__output" id="passwordOutput" tabindex="0" aria-label="Senha gerada"></div>
+      <button id="copyButton" class="password-generator__copy" aria-label="Copiar senha para área de transferência" title="Copiar senha">
+        📋
+      </button>
+      <div id="copyFeedback" class="password-generator__copy-feedback" aria-live="assertive"></div>
+
+      <div class="password-generator__strength" id="strengthIndicator" aria-label="Indicador de força da senha">
+        <div class="password-generator__strength-bar" id="strengthBar"></div>
+        <div class="password-generator__strength-text" id="strengthText"></div>
+        <div class="password-generator__entropy" id="entropyText"></div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>
