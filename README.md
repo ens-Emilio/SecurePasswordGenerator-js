@@ -28,7 +28,7 @@ O Gerador de Senhas Seguras é uma ferramenta web que permite criar senhas forte
 ### Instalação
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/passwords-generator.git
+   git clone https://github.com/ens-Emilio/SecurePasswordGenerator-js.git
    cd passwords-generator
    ```
 
